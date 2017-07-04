@@ -1,0 +1,876 @@
+@import "normalize";
+@import "susy";
+@import "breakpoint";
+@import "parallax";
+
+$medium-screen: 720px;
+
+$linkColor: #7f7f7f;
+$hoverColor: #cdcdcd;
+$mobile-ratioX: 11;
+$mobile-ratioY: 16;
+$desktop-ratioX: 16;
+$desktop-ratioY: 6;
+
+$susy: (
+
+	columns: 12,
+	debug: (),
+	global-box-sizing: border-sizing,
+	gutters: 0
+
+);
+
+@include border-box-sizing;
+
+.content {
+	@include container(1140px);
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin background($image) {
+	background: url(../images/#{$image}) no-repeat;
+
+    height: auto;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    @include parallax(-.3);
+}
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=latin-ext';
+$primary: #1586D1;
+
+@include parallax-init($element: '.parallax');
+
+body {
+	font-family: Roboto, sans-serif;
+	font-weight: 100;
+	line-height: 1;
+	font-size: 62,5%;
+	overflow-y: hidden;
+	background-color: #EEF1F3;
+}
+
+.parallax {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+.navbar {
+
+	position: fixed;
+	width: 100%;
+	height: 56px;
+	z-index: 999;
+	background-color: rgba(0,0,0,0.3);
+
+	.navbar-content {
+
+		max-width: 1140px;
+		margin: 0 auto;
+
+		.brand {
+
+			float: left;
+			padding-left: 30px;
+			padding-right: 30px;
+			height: 56px;
+			line-height: 56px;
+
+		}
+
+		#nav {
+
+			height: 100%;
+
+			button {
+
+				position: relative;
+				top: -8px;
+				left: -8px;
+				visibility: hidden;
+				height: 56px;
+				width: 100%;
+				border: none;
+				font-weight: 500;
+				color: white;
+				background-color: rgba(0,0,0,0);
+				text-align: left;
+				padding-left: 30px;
+
+				&:focus {
+
+					outline:0;
+
+				}
+
+			}
+
+			#home-btn {
+
+				background-color: rgba(0,0,0,0.4);
+
+			}
+
+		}
+
+		.collapse {
+
+			position: relative;
+			margin-right: 30px;
+			margin-top: 10px;
+			height: 36px;
+			width: 	46px;
+			float: right;
+
+			border-radius: 5px;
+			background-color: rgba(255,255,255,0);
+			border: 1px solid #c8c8c8;
+			display: block;
+
+			.hr {
+
+				border: 1px solid #a7a7a7;
+				margin: 4px 4px;
+
+			}
+
+			&:focus {
+
+				outline: 0;
+
+			}
+
+		}
+
+		a {
+
+			display: block;
+			color: white;
+			font-weight: 500;
+			margin: 0;
+			text-decoration: none;
+
+		}
+
+	}
+
+	@include breakpoint(768px) {
+
+		.navbar-content {
+
+			height: 100%;
+			position: relative;
+
+			.brand {
+
+				cursor: pointer;
+
+			}
+
+			#nav {
+
+				float: right;
+				height: 100%;
+				visibility: visible !important;
+				opacity: 1 !important;
+
+				button {
+
+					position: relative;
+					top: 0;
+					left: 0;
+					opacity: 1 !important;
+					visibility: visible !important;
+					display: inline;
+					height: 100%;
+					width: auto;
+					padding-left: 20px;
+					padding-right: 20px;
+					border: none;
+					font-weight: 500;
+					color: white;
+					background-color: rgba(0,0,0,0);
+					cursor: pointer;
+
+				}
+
+				#home-btn {
+
+					background-color: rgba(0,0,0,0.4);
+
+				}
+
+			}
+
+			.collapse {
+
+				display: none;
+
+			}
+
+		}
+
+	}
+
+}
+
+.page {
+	@include breakpoint(768px) {
+		height: 100%;
+		width: 100%;
+	}
+
+	transform: translateZ(0);
+
+	> * {
+		position: absolute;
+	}
+
+}
+
+.content {
+	position: relative;
+	text-align: center;
+	height: 100%;
+}
+
+#page1 {
+	height: 100%;
+	z-index: 0;
+
+	#bckg1 {
+		visibility: hidden;
+		@include background("space2.jpg");
+	}
+
+	#bckg2 {
+		visibility: hidden;
+		@include background("space1.jpg");
+	}
+
+	#bckg3 {
+		visibility: hidden;
+		@include background("nasa_cosmonaut_v3.jpg");
+	}
+
+	.content {
+		.arrow {
+  		position: relative;
+
+  		margin: 0 auto;
+  		top: 80%;
+  		width: 350px;
+  		height: 70px;
+			background-color: rgba(0,0,0,0.4);
+			border-radius: 5px;
+			border: solid 1px #eeeeee;
+
+
+			.line {
+
+				transform: scale(0.45);
+        margin-top: -15px;
+			}
+		}
+	}
+}
+
+#page2 {
+	z-index: 1;
+	position: relative;
+	height: auto;
+
+	.portfolio  {
+		overflow: hidden;
+		-webkit-overflow-scrolling: touch;
+		position: relative;
+		width: 100%;
+
+		@include container();
+
+		@include breakpoint(768px) {
+
+		}
+
+		.white {
+			@include span(12 of 12);
+			@include last;
+			@include aspect-ratio(16, 3);
+			background-color: #EEF1F3;
+		}
+
+		#wrap1 {
+			position: relative;
+			overflow: hidden;
+
+			@include span(12 of 12);
+
+			@include breakpoint(768px) {
+			    @include span(6 of 12);
+			    @include aspect-ratio($desktop-ratioX, $desktop-ratioY);
+			}
+
+			#img1 {
+				width: 100%;
+				height: 100%;
+
+				position: absolute;
+
+				background: url(../images/work2.jpg) no-repeat;
+			    top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+			    background-position: 50% 50%;
+			    -webkit-background-size: cover;
+			    -moz-background-size: cover;
+			    -o-background-size: cover;
+			    background-size: cover;
+			 }
+
+			.overlay {
+				visibility: hidden;
+
+				position: absolute;
+
+				width: 100%;
+				height: 100%;
+
+				top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+
+				background: rgba(0, 0, 0, 0.5);
+				border: none;
+			}
+
+			.visitBtn {
+				visibility: hidden;
+
+				position: absolute;
+
+				margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
+
+				top: 75%;
+
+				height: 20%;
+				width: 25%;
+
+				background-color: rgba(0, 0, 0, 0);
+				border: 2px solid #ffffff;
+				border-radius: 3px;
+
+				.btnText {
+
+					position: absolute;
+
+					left: 50%;
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+
+					color: #ffffff;
+					font-weight: 400;
+					font-size: 1.5em;
+
+				}
+
+				.buttonIcon {
+
+					visibility: hidden;
+
+					position: absolute;
+
+					left: 50%;
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+
+					color: #ffffff;
+					font-weight: 400;
+					font-size: 1.2em;
+
+				}
+
+			}
+
+		}
+
+		#wrap2 {
+
+			overflow: hidden;
+			@include span(12 of 12);
+			@include aspect-ratio($mobile-ratioX, $mobile-ratioY);
+
+			@include breakpoint(768px) {
+
+			    @include span(6 of 12);
+			    @include aspect-ratio($desktop-ratioX, $desktop-ratioY);
+			    @include last;
+
+			}
+
+			#img2 {
+
+				width: 100%;
+				height: 100%;
+
+				position: absolute;
+
+				background: url(../images/work2.jpg) no-repeat;
+			    top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+			    background-position: 50% 50%;
+			    -webkit-background-size: cover;
+			    -moz-background-size: cover;
+			    -o-background-size: cover;
+			    background-size: cover;
+
+			}
+
+			.overlay {
+
+				visibility: hidden;
+
+				position: absolute;
+
+				width: 100%;
+				height: 100%;
+
+				top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+
+				background: rgba(0, 0, 0, 0.5);
+
+			}
+
+			.visitBtn {
+
+				visibility: hidden;
+
+				position: absolute;
+
+				margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
+
+				top: 75%;
+
+				height: 20%;
+				width: 25%;
+
+				background-color: rgba(0, 0, 0, 0);
+				border: 2px solid #ffffff;
+				border-radius: 3px;
+
+				.btnText {
+
+					position: absolute;
+
+					left: 50%;
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+
+					color: #ffffff;
+					font-weight: 400;
+					font-size: 1.5em;
+
+				}
+
+				.buttonIcon {
+
+					visibility: hidden;
+
+					position: absolute;
+
+					left: 50%;
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+
+					color: #ffffff;
+					font-weight: 400;
+					font-size: 1.2em;
+
+				}
+
+			}
+
+		}
+
+		#wrap3 {
+
+			overflow: hidden;
+			@include span(12 of 12);
+			@include aspect-ratio($mobile-ratioX, $mobile-ratioY);
+
+			@include breakpoint(768px) {
+
+			    @include span(6 of 12);
+			    @include aspect-ratio($desktop-ratioX, $desktop-ratioY);
+			    @include last;
+
+			}
+
+			#img3 {
+
+				width: 100%;
+				height: 100%;
+
+				position: absolute;
+
+				background: url(../images/work2.jpg) no-repeat;
+			    top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+			    background-position: 50% 50%;
+			    -webkit-background-size: cover;
+			    -moz-background-size: cover;
+			    -o-background-size: cover;
+			    background-size: cover;
+
+			}
+
+			.overlay {
+
+				visibility: hidden;
+
+				position: absolute;
+
+				width: 100%;
+				height: 100%;
+
+				top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+
+				background: rgba(0, 0, 0, 0.5);
+
+			}
+
+			.visitBtn {
+
+				visibility: hidden;
+
+				position: absolute;
+
+				margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
+
+				top: 75%;
+
+				height: 20%;
+				width: 25%;
+
+				background-color: rgba(0, 0, 0, 0);
+				border: 2px solid #ffffff;
+				border-radius: 3px;
+
+				.btnText {
+
+					position: absolute;
+
+					left: 50%;
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+
+					color: #ffffff;
+					font-weight: 400;
+					font-size: 1.5em;
+
+				}
+
+				.buttonIcon {
+
+					visibility: hidden;
+
+					position: absolute;
+
+					left: 50%;
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+
+					color: #ffffff;
+					font-weight: 400;
+					font-size: 1.2em;
+
+				}
+
+			}
+
+		}
+
+		#wrap4 {
+
+			overflow: hidden;
+			@include span(12 of 12);
+			@include aspect-ratio($mobile-ratioX, $mobile-ratioY);
+
+			@include breakpoint(768px) {
+
+			    @include span(6 of 12);
+			    @include aspect-ratio($desktop-ratioX, $desktop-ratioY);
+			    @include last;
+
+			}
+
+			#img4 {
+
+				width: 100%;
+				height: 100%;
+
+				position: absolute;
+
+				background: url(../images/work2.jpg) no-repeat;
+			    top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+			    background-position: 50% 50%;
+			    -webkit-background-size: cover;
+			    -moz-background-size: cover;
+			    -o-background-size: cover;
+			    background-size: cover;
+
+			}
+
+			.overlay {
+
+				visibility: hidden;
+
+				position: absolute;
+
+				width: 100%;
+				height: 100%;
+
+				top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+
+				background: rgba(0, 0, 0, 0.5);
+
+			}
+
+			.visitBtn {
+
+				visibility: hidden;
+
+				position: absolute;
+
+				margin-left: auto;
+				margin-right: auto;
+				left: 0;
+				right: 0;
+
+				top: 75%;
+
+				height: 20%;
+				width: 25%;
+
+				background-color: rgba(0, 0, 0, 0);
+				border: 2px solid #ffffff;
+				border-radius: 3px;
+
+				.btnText {
+
+					position: absolute;
+
+					left: 50%;
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+
+					color: #ffffff;
+					font-weight: 400;
+					font-size: 1.5em;
+
+				}
+
+				.buttonIcon {
+
+					visibility: hidden;
+
+					position: absolute;
+
+					left: 50%;
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+
+					color: #ffffff;
+					font-weight: 400;
+					font-size: 1.2em;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	@include breakpoint(768px) {
+
+		.background {
+
+
+
+
+
+		}
+
+	}
+
+}
+
+#page3 {
+
+	height: 100%;
+	z-index: 1;
+	position: relative;
+
+	.background {
+
+		background-color: #EEF1F3;
+		height: 100%;
+		width: 100%;
+
+	}
+
+	.content {
+
+		padding-top: 30px;
+
+		p {
+
+			@include span(10 of 12);
+			@include push(1 of 12);
+			text-align: left;
+			font-family: 'PT Sans', sans-serif;
+			font-weight: 400;
+			line-height: 1.4;
+			font-size: 1em;
+			color: #0d0d0d;
+			word-spacing: 2px;
+			padding: 20px 80px 0 80px;
+
+		}
+
+	}
+
+}
+
+#page4 {
+
+	height: 100%;
+	z-index: 0;
+
+	.background {
+
+		@include background("second.jpg");
+
+	}
+
+	.content {
+
+		.arrow {
+
+			position: relative;
+			width: 400px;
+			height: 300px;
+			background-color: rgba(0,0,0,0.5);
+			border-radius: 30px;
+			margin: 0 auto;
+			margin-top: 60%;
+
+			filter: blur(7px);
+		}
+
+	}
+
+}
+
+#footer {
+
+	height: 400px;
+	z-index: 1;
+	background-color: #EEF1F3;
+
+	.content {
+
+
+
+	}
+
+}
+
+.title {
+
+	text-align: center;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+
+}
+
+h1, h2 {
+
+	font-weight: 100;
+	margin: 0;
+
+}
+
+h1 {
+
+	font-size: 5em;
+	color: $primary;
+
+}
