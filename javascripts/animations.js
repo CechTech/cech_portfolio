@@ -76,7 +76,7 @@ $(document).ready(function() {
   })
 });
 
-//collapse
+//Collapse
 $(document).ready(function() {
   var tl = new TimelineLite( {
     paused: true,
@@ -92,6 +92,10 @@ $(document).ready(function() {
   ;
 
   $(".collapse-btn").click(function() {
+    tl.reversed() ? tl.play():tl.reverse();
+  });
+
+  $("#nav button").click(function() {
     tl.reversed() ? tl.play():tl.reverse();
   });
 });
