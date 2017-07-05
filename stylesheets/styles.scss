@@ -200,9 +200,14 @@ p {
 	}
 
 	#bckg3 {
-		@include background("nasa_cosmonaut_v4.jpg");
+		@include background("nasa_cosmonaut_v6.jpg");
+    bottom: -300px;
     top: auto;
-    height: 2315px;
+    min-height: 2251px;
+
+    @include breakpoint($destop) {
+      bottom: 0;
+    }
 	}
 
 	.home-page-btn {
@@ -211,9 +216,9 @@ p {
 		margin-right: auto;
 		left: 0;
 		right: 0;
-		top: 70%;
-		width: 200px;
-		height: 70px;
+		top: 80%;
+		width: 170px;
+		height: 45px;
 		background-color: rgba(0,0,0,0.4);
 		border-radius: 5px;
 		border: solid 1px $white;
@@ -221,19 +226,22 @@ p {
     cursor: pointer;
 
 		.arrow {
-			-webkit-transform: scale(0.45);
-			        transform: scale(0.45);
-      margin-top: -15px;
+      @include center (scale(1.6));
       fill: none;
       stroke: $white;
-      stroke-width: 3;
+      stroke-width: 1;
 		}
 	}
 
   @include breakpoint($destop) {
     .home-page-btn {
       width: 350px;
+      height: 60px;
       top: 80%;
+
+      .arrow {
+        @include center (scale(2));
+      }
     }
   }
 }

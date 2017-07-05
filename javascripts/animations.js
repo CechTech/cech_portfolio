@@ -3,15 +3,15 @@ $(document).ready(function() {
   var controllerSS = new ScrollMagic.Controller();
   var tlss = new TimelineMax({repeat: -1, repeatDelay: -4});
 
-  tlss.to("#bckg1", 4, {force3D:true, autoAlpha: 1})
-    .to("#bckg1", 15, {force3D:true, scale: 1.5}, "-=4")
-    .to("#bckg1", 4, {force3D:true, autoAlpha: 0}, "-=2")
-    .to("#bckg2", 4, {force3D:true, autoAlpha: 1}, "-=4")
-    .to("#bckg2", 15, {force3D:true, scale: 1.5}, "-=4")
-    .to("#bckg2", 4, {force3D:true, autoAlpha: 0}, "-=2")
-    .to("#bckg3", 4, {force3D:true, autoAlpha: 1}, "-=4")
-    .to("#bckg3", 40, {force3D:true, y: 1300}, "-=4")
-    .to("#bckg3", 4, {force3D:true, autoAlpha: 0}, "-=2")
+  tlss.to("#bckg1", 5, {force3D:true, autoAlpha: 1, overwrite: false})
+    .to("#bckg1", 13, {force3D:true, scale: 1.5, overwrite: false, immediateRender: false}, "-=5")
+    .to("#bckg1", 5, {force3D:true, autoAlpha: 0, overwrite: false, immediateRender: false}, "-=3")
+    .to("#bckg2", 5, {force3D:true, autoAlpha: 1, overwrite: false, immediateRender: false}, "-=5")
+    .from("#bckg2", 20, {force3D:true, scale: 2, overwrite: false, immediateRender: false}, "-=5")
+    .to("#bckg2", 5, {force3D:true, autoAlpha: 0, overwrite: false, immediateRender: false}, "-=3")
+    .to("#bckg3", 5, {force3D:true, autoAlpha: 1, overwrite: false, immediateRender: false}, "-=5")
+    .to("#bckg3", 30, {force3D:true, y: 1800, ease: Power1.easeIn, overwrite: false, immediateRender: false}, "-=5")
+    .to("#bckg3", 5, {force3D:true, autoAlpha: 0, overwrite: false, immediateRender: false}, "-=3")
   ;
 
   var slideShow = new ScrollMagic.Scene({
