@@ -172,6 +172,7 @@ p {
 }
 
 .page {
+  position: relative; // Solves chrome z-index bug
 	-webkit-transform: translateZ(0);
 	        transform: translateZ(0);
 }

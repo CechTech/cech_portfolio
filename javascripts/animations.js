@@ -97,9 +97,11 @@ $(document).ready(function() {
     tl.reversed() ? tl.play():tl.reverse();
   });
 
-  $("#nav button").click(function() {
-    tl.reversed() ? tl.play():tl.reverse();
-  });
+  if ($(window).width() <= 768) {
+    $("#nav button").click(function() {
+      tl.reversed() ? tl.play():tl.reverse();
+    });
+  }
 });
 
 //scrollto
@@ -131,10 +133,10 @@ $(document).ready(function() {
     var controller = new ScrollMagic.Controller();
 
     var page2 = new TimelineLite();
-    page2.to('.navbar', .2, {backgroundColor: 'rgba(255,255,255,0.6)'})
-      .to('.navbar a', .2, {color: '#7f7f7f'}, "-=.2")
-      .to('#nav button', .2, {color: '#7f7f7f', backgroundColor: 'rgba(0,0,0,0)'}, "-=.2")
-      .fromTo('#portfolio-btn', .2, {backgroundColor: 'none'}, {backgroundColor: '#cdcdcd', overwrite: false}, "-=.2")
+    page2.to('.navbar', .2, {backgroundColor: 'rgba(255,255,255,0.6)', overwrite: false})
+      .to('.navbar a', .2, {color: '#7f7f7f', overwrite: false, immediateRender: false}, "-=.2")
+      .to('#nav button', .2, {color: '#7f7f7f', backgroundColor: 'rgba(0,0,0,0)', overwrite: false, immediateRender: false}, "-=.2")
+      .fromTo('#portfolio-btn', .2, {backgroundColor: 'none'}, {backgroundColor: '#cdcdcd', overwrite: false, immediateRender: false}, "-=.2")
     ;
 
     var containerScene = new ScrollMagic.Scene({
@@ -146,7 +148,7 @@ $(document).ready(function() {
     ;
 
     var page3 = new TimelineLite();
-    page3.to('#nav button', .2, {backgroundColor: 'none'})
+    page3.to('#nav button', .2, {backgroundColor: 'none', overwrite: false, immediateRender: false})
       .fromTo('#bio-btn', .2, {backgroundColor: 'none'}, {backgroundColor: '#cdcdcd', overwrite: false, immediateRender: false}, "-=.2")
     ;
 
@@ -159,9 +161,9 @@ $(document).ready(function() {
     ;
 
     var page4 = new TimelineLite();
-    page4.to('.navbar', .2, {backgroundColor: 'rgba(0,0,0,0.3)'})
-      .to('.navbar a', .2, {color: 'white'}, "-=.2")
-      .to('#nav button', .2, {color: "white", backgroundColor: 'rgba(205,205,205,0)'}, "-=.2")
+    page4.to('.navbar', .2, {backgroundColor: 'rgba(0,0,0,0.3)', overwrite: false, immediateRender: false})
+      .to('.navbar a', .2, {color: 'white', overwrite: false, immediateRender: false}, "-=.2")
+      .to('#nav button', .2, {color: "white", backgroundColor: 'rgba(205,205,205,0)', overwrite: false, immediateRender: false}, "-=.2")
       .fromTo('#contact-btn', .2, {backgroundColor: 'none'}, {backgroundColor: 'rgba(0,0,0,0.4)', overwrite: false, immediateRender: false}, "-=.2")
     ;
 
