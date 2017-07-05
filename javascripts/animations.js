@@ -10,7 +10,7 @@ $(document).ready(function() {
     .to("#bckg2", 15, {force3D:true, scale: 1.5}, "-=4")
     .to("#bckg2", 4, {force3D:true, autoAlpha: 0}, "-=2")
     .to("#bckg3", 4, {force3D:true, autoAlpha: 1}, "-=4")
-    .to("#bckg3", 15, {force3D:true, y: 200}, "-=4")
+    .to("#bckg3", 40, {force3D:true, y: 1300}, "-=4")
     .to("#bckg3", 4, {force3D:true, autoAlpha: 0}, "-=2")
   ;
 

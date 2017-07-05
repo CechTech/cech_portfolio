@@ -1,47 +1,40 @@
-@import "normalize";
-@import "susy";
-@import "breakpoint";
-@import "parallax";
-@import "mixins";
-@import "reset_defaults";
-
-$medium-screen: 720px;
-
-$linkColor: #7f7f7f;
-$hoverColor: #cdcdcd;
-$mobile-ratioX: 11;
-$mobile-ratioY: 16;
-$desktop-ratioX: 16;
-$desktop-ratioY: 6;
-$primary: #1586D1;
-
-$susy: (
-	columns: 12,
-	debug: (),
-	global-box-sizing: border-sizing,
-	gutters: 0
-);
+@import "partials/normalize";
+@import "partials/susy";
+@import "partials/breakpoint";
+@import "partials/parallax";
+@import "partials/mixins";
+@import "partials/variables";
+@import "partials/reset_defaults";
 
 @include border-box-sizing;
+@include parallax-init($element: '.parallax');
 
 .content {
 	@include container(1140px);
 }
-
-@include parallax-init($element: '.parallax');
 
 body {
 	font-family: 'Roboto', sans-serif;
 	line-height: 1;
 	font-size: 100%;
 	overflow-y: hidden;
-	background-color: #EEF1F3;
+	background-color: #000000;
 }
 
 h1, h2 {
   font-weight: 100;
 	font-size: 5rem;
 	color: $primary;
+}
+
+p {
+	text-align: left;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	line-height: 1.4;
+	font-size: 1.2rem;
+	color: #0d0d0d;
+	word-spacing: 2px;
 }
 
 .parallax {
@@ -175,7 +168,8 @@ h1, h2 {
 }
 
 .page {
-	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	        transform: translateZ(0);
 }
 
 .content {
@@ -202,7 +196,9 @@ h1, h2 {
 
 	#bckg3 {
 		visibility: hidden;
-		@include background("nasa_cosmonaut_v3.jpg");
+		@include background("nasa_cosmonaut_v4.jpg");
+    top: auto;
+    height: 2315px;
     @include parallax(-.3);
 	}
 
@@ -221,7 +217,8 @@ h1, h2 {
       cursor: pointer;
 
 			.line {
-				transform: scale(0.45);
+				-webkit-transform: scale(0.45);
+				        transform: scale(0.45);
         margin-top: -15px;
 			}
 		}
@@ -388,16 +385,6 @@ h1, h2 {
         margin-bottom: 3rem;
       }
     }
-
-		p {
-			text-align: left;
-			font-family: 'PT Sans', sans-serif;
-			font-weight: 400;
-			line-height: 1.4;
-			font-size: 1.2rem;
-			color: #0d0d0d;
-			word-spacing: 2px;
-		}
 	}
 }
 
@@ -420,17 +407,14 @@ h1, h2 {
 			margin: 0 auto;
 			margin-top: 60%;
 
-			filter: blur(7px);
+			-webkit-filter: blur(7px);
+			        filter: blur(7px);
 		}
 	}
 }
 
-#footer {
-	height: 400px;
+footer {
+  padding: 7rem 0;
 	z-index: 1;
 	background-color: #EEF1F3;
-
-	.content {
-
-	}
 }

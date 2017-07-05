@@ -19,99 +19,100 @@
 			<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin-ext" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=latin-ext" rel="stylesheet">
 
-    	<link rel="stylesheet" href="css/styles.min.css">
+    	<link rel="stylesheet" href="stylesheets/styles.min.css">
 
     	<title>Portfolio</title>
 	</head>
 
 	<body>
+  	<nav class="navbar" role="navigation">
+  		<div class="navbar-content">
+  			<button class="collapse" id="btn1">
+  				<div class="hr" id="top"></div>
+  				<div class="hr" id="middle"></div>
+  				<div class="hr" id="bottom"></div>
+  			</button>
 
-	<nav class="navbar" role="navigation">
-		<div class="navbar-content">
-			<button class="collapse" id="btn1">
-				<div class="hr" id="top"></div>
-				<div class="hr" id="middle"></div>
-				<div class="hr" id="bottom"></div>
-			</button>
+  			<div class="brand">
+  				<a href="">Jiří Čech</a>
+  			</div>
 
-			<div class="brand">
-				<a href="">Jiří Čech</a>
-			</div>
+  	    <div id="nav">
+  	      <button id="home-btn">Home</button><button id="portfolio-btn">Portfolio</button><button id="bio-btn">Bio</button><button id="contact-btn">Contact</button>
+  	    </div>
+  		</div>
+  	</nav>
 
-	    <div id="nav">
-	      <button id="home-btn">Home</button><button id="portfolio-btn">Portfolio</button><button id="bio-btn">Bio</button><button id="contact-btn">Contact</button>
-	    </div>
-		</div>
-	</nav>
+  	<div class="parallax">
+  		<div class="page" id="page1">
+  			<div class="background" id="bckg1"></div>
+  			<div class="background" id="bckg2"></div>
+  			<div class="background" id="bckg3"></div>
 
-	<div class="parallax">
-		<div class="page" id="page1">
-			<div class="background" id="bckg1"></div>
-			<div class="background" id="bckg2"></div>
-			<div class="background" id="bckg3"></div>
+  			<div class="content">
+          <h1>Main Title</h1>
+  				<div class="home-page-btn">
+  					<svg class="line" width="100" height="100">
+  						<polyline class="svg-line" points="0,25 50,75 100,25" style="fill:none;stroke:white;stroke-width:3" />
+  					</svg>
+  				</div>
+  			</div>
+  		</div>
 
-			<div class="content">
-        <h1>Main Title</h1>
-				<div class="home-page-btn">
-					<svg class="line" width="100" height="100">
-						<polyline class="svg-line" points="0,25 50,75 100,25" style="fill:none;stroke:white;stroke-width:3" />
-					</svg>
-				</div>
-			</div>
-		</div>
+  		<div class="page" id="page2">
+  			<div class="portfolio">
+          <h2>Portfolio</h2>
 
-		<div class="page" id="page2">
-			<div class="portfolio">
-        <h2>Portfolio</h2>
+  				<div class="wrap" id="wrap1">
+  					<div class="img" id="img1"></div>
+  					<div class="overlay"></div>
+  					<a href="" class="visitBtn"><span class="btnText">Visit </span><i class="fa fa-long-arrow-right buttonIcon"></i></a>
+  				</div>
 
-				<div class="wrap" id="wrap1">
-					<div class="img" id="img1"></div>
-					<div class="overlay"></div>
-					<a href="" class="visitBtn"><span class="btnText">Visit </span><i class="fa fa-long-arrow-right buttonIcon"></i></a>
-				</div>
+  				<div class="wrap" id="wrap2">
+  					<div class="img" id="img2"></div>
+  					<div class="overlay"></div>
+  					<a href="" class="visitBtn"><span class="btnText">Visit </span><i class="fa fa-long-arrow-right buttonIcon"></i></a>
+  				</div>
 
-				<div class="wrap" id="wrap2">
-					<div class="img" id="img2"></div>
-					<div class="overlay"></div>
-					<a href="" class="visitBtn"><span class="btnText">Visit </span><i class="fa fa-long-arrow-right buttonIcon"></i></a>
-				</div>
+  				<div class="wrap" id="wrap3">
+  					<div class="img" id="img3"></div>
+  					<div class="overlay"></div>
+  					<a href="" class="visitBtn"><span class="btnText">Visit </span><i class="fa fa-long-arrow-right buttonIcon"></i></a>
+  				</div>
 
-				<div class="wrap" id="wrap3">
-					<div class="img" id="img3"></div>
-					<div class="overlay"></div>
-					<a href="" class="visitBtn"><span class="btnText">Visit </span><i class="fa fa-long-arrow-right buttonIcon"></i></a>
-				</div>
+  				<div class="wrap" id="wrap4">
+  					<div class="img" id="img4"></div>
+  					<div class="overlay"></div>
+  					<a href="" class="visitBtn"><span class="btnText">Visit </span><i class="fa fa-long-arrow-right buttonIcon"></i></a>
+  				</div>
+  			</div>
+  		</div>
 
-				<div class="wrap" id="wrap4">
-					<div class="img" id="img4"></div>
-					<div class="overlay"></div>
-					<a href="" class="visitBtn"><span class="btnText">Visit </span><i class="fa fa-long-arrow-right buttonIcon"></i></a>
-				</div>
-			</div>
-		</div>
+  		<div class="page" id="page3">
+  			<div class="content">
+          <div class="bio">
+            <h2>Bio</h2>
+            <p>
+              Starting my professional career as a web developer. I am skilled in many programming languages and frameworks related to web development and my favourite ones are HTML, CSS, PHP, MySQL, jQuery, Bootstrap and GSAP. I study at the Faculty of Informatics and Statistics, University of Economics in Prague where I get good knowledge about business and marketing sector along with developer practical skills such as building Oracle database system, configurating Apache server and programming in Java. Most of our school projects are team based which is great for improving communication and learning how to cooperate with colleagues. I am going to learn more developer languages and technologies focused on web applications along with getting more in-depth with the ones I already know. On my to-do list are Ruby on Rails, React.js, Nette, Swift and Objective-C.
+            </p>
+          </div>
+  			</div>
+  		</div>
+  		<div class="page" id="page4">
+  			<div class="background"></div>
+  			<div class="content">
+          <h2>Content</h2>
+  			</div>
+  		</div>
+  		<footer>
+  			<div class="content">
+          <h2>Footer</h2>
+  			</div>
+  		</footer>
+  	</div>
 
-		<div class="page" id="page3">
-			<div class="content">
-        <div class="bio">
-          <h2>Bio</h2>
-          <p>
-            Starting my professional career as a web developer. I am skilled in many programming languages and frameworks related to web development and my favourite ones are HTML, CSS, PHP, MySQL, jQuery, Bootstrap and GSAP. I study at the Faculty of Informatics and Statistics, University of Economics in Prague where I get good knowledge about business and marketing sector along with developer practical skills such as building Oracle database system, configurating Apache server and programming in Java. Most of our school projects are team based which is great for improving communication and learning how to cooperate with colleagues. I am going to learn more developer languages and technologies focused on web applications along with getting more in-depth with the ones I already know. On my to-do list are Ruby on Rails, React.js, Nette, Swift and Objective-C.
-          </p>
-        </div>
-			</div>
-		</div>
-		<div class="page" id="page4">
-			<div class="background"></div>
-			<div class="content">
-        <h2>Content</h2>
-			</div>
-		</div>
-		<div class="page" id="footer">
-			<div class="content">
-        <h2>Footer</h2>
-			</div>
-		</div>
-	</div>
-  <script src="javascripts/animations.js" type="text/javascript"></script>
+    <script src="javascripts/animations.js" type="text/javascript"></script>
+
 	</body>
 </html>

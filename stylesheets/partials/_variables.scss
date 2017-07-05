@@ -1,0 +1,15 @@
+$medium-screen: 720px;
+$linkColor: #7f7f7f;
+$hoverColor: #cdcdcd;
+$mobile-ratioX: 11;
+$mobile-ratioY: 16;
+$desktop-ratioX: 16;
+$desktop-ratioY: 6;
+$primary: #1586D1;
+
+$susy: (
+	columns: 12,
+	debug: (),
+	global-box-sizing: border-sizing,
+	gutters: 0
+);
