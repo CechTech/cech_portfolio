@@ -23,8 +23,14 @@ body {
 
 h1, h2 {
   font-weight: 100;
-	font-size: 5rem;
+	font-size: 3rem;
 	color: $primary;
+}
+
+@include breakpoint($destop) {
+  h1, h2{
+    font-size: 5rem;
+  }
 }
 
 p {
@@ -114,7 +120,7 @@ p {
 		}
 	}
 
-	@include breakpoint(768px) {
+	@include breakpoint($destop) {
 		.navbar-content {
 			height: 100%;
 
@@ -211,7 +217,7 @@ p {
 		}
 	}
 
-  @include breakpoint(768px) {
+  @include breakpoint($destop) {
     .home-page-btn {
       width: 350px;
       top: 80%;
@@ -230,7 +236,13 @@ p {
     background-color: $background-color;
 
     h2 {
-      padding: 7rem 10%;
+      padding: 3rem 10%;
+    }
+
+    @include breakpoint($destop) {
+      h2 {
+        padding: 7rem 10%;
+      }
     }
 
     .potfolio-img {
@@ -306,7 +318,17 @@ p {
 
   .bio {
     width: 100%;
-    padding: 7rem 15%;
+    padding: 3rem 5%;
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @include breakpoint($destop) {
+    .bio {
+      padding: 7rem 15%;
+    }
 
     h2 {
       margin-bottom: 3rem;
