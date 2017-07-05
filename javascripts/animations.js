@@ -49,7 +49,7 @@ $(document).ready(function() {
 //Blur
 $(document).ready(function() {
   $(".wrap").each(function (index, element){
-    var imagen = $(this).find(".img");
+    var imagen = $(this).find("img");
     var blurElement = {a:0};
     var overlay = $(this).find(".overlay");
     var btn = $(this).find(".visitBtn");
@@ -86,12 +86,12 @@ $(document).ready(function() {
   tl.to("#middle", 0.4, {autoAlpha:0})
     .to("#top", 0.4, {y: 6, rotation: "+45"}, "-=0.4")
     .to("#bottom", 0.4, {y: -6, rotation: "-45"}, "-=0.4")
-    .to("#btn1", 0.4, {borderRadius: 20, height: 40, width: 40, x: -4}, "-=0.4")
+    .to(".collapse-btn", 0.4, {borderRadius: 20, height: 40, width: 40, x: -4}, "-=0.4")
     .to(".navbar", 0.48, {height: 280}, "-=0.4")
     .staggerTo("#nav button", 0.48, {y: 8, x: 8, autoAlpha: 1, display: "block"}, 0.12, "-=0.48")
   ;
 
-  $("#btn1").click(function() {
+  $(".collapse-btn").click(function() {
     tl.reversed() ? tl.play():tl.reverse();
   });
 });
