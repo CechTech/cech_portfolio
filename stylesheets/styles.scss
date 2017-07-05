@@ -33,6 +33,19 @@ h1, h2 {
   }
 }
 
+h3 {
+  text-align: left;
+  font-size: 1.3rem;
+  margin-bottom: .7rem;
+  margin-left: .6rem;
+  margin: 4rem 0 .7rem .6rem;
+  font-weight: 500;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 p {
 	text-align: left;
 	font-family: 'PT Sans', sans-serif;
@@ -245,6 +258,25 @@ p {
       }
     }
 
+    .portfolio-mobile-links {
+      a {
+        display: block;
+        width: 100%;
+        height: 200px;
+        text-align: left;
+      }
+    }
+
+    .portfolio-mobile-img {
+      @include background("work2.jpg");
+    }
+
+    @include breakpoint($destop) {
+      .portfolio-mobile-links {
+        display: none;
+      }
+    }
+
     .potfolio-img {
       width: 100%;
       height: auto;
@@ -302,10 +334,12 @@ p {
 		}
 
 		.wrap {
-			position: relative;
+			display: none;
 			@include span(12 of 12);
 
-			@include breakpoint(768px) {
+			@include breakpoint($destop) {
+        display: block;
+        position: relative;
 			  @include span(6 of 12);
 			}
 		}
@@ -318,7 +352,7 @@ p {
 
   .bio {
     width: 100%;
-    padding: 3rem 5%;
+    padding: 3rem 1.8rem;
 
     h2 {
       margin-bottom: 1.5rem;

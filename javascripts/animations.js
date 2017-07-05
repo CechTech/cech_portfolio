@@ -48,32 +48,34 @@ $(document).ready(function() {
 
 //Blur
 $(document).ready(function() {
-  $(".wrap").each(function (index, element){
-    var imagen = $(this).find("img");
-    var blurElement = {a:0};
-    var overlay = $(this).find(".overlay");
-    var btn = $(this).find(".visitBtn");
-    var tlImg = new TimelineLite({paused:true});
+  if($(window).width() >= 768) {
+    $(".wrap").each(function (index, element){
+      var imagen = $(this).find("img");
+      var blurElement = {a:0};
+      var overlay = $(this).find(".overlay");
+      var btn = $(this).find(".visitBtn");
+      var tlImg = new TimelineLite({paused:true});
 
-    tlImg.to(blurElement, 0.3, {a:4, onUpdate:applyBlur, force3D:true})
-      .to(overlay, .3, { autoAlpha:1},"-=0.3")
-      .to(btn, 0.5, {y:-20, autoAlpha:1}, "-=0.3")
-    ;
+      tlImg.to(blurElement, 0.3, {a:4, onUpdate:applyBlur, force3D:true})
+        .to(overlay, .3, { autoAlpha:1},"-=0.3")
+        .to(btn, 0.5, {y:-20, autoAlpha:1}, "-=0.3")
+      ;
 
-    element.animation = tlImg;
+      element.animation = tlImg;
 
-    function applyBlur() {
-      TweenLite.set([imagen], {webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)", force3D:true});
-    };
-  })
+      function applyBlur() {
+        TweenLite.set([imagen], {webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)", force3D:true});
+      };
+    })
 
-  $(".wrap").mouseenter(function(){
-    this.animation.play();
-  })
+    $(".wrap").mouseenter(function(){
+      this.animation.play();
+    })
 
-  $(".wrap").mouseleave(function(){
-    this.animation.reverse();
-  })
+    $(".wrap").mouseleave(function(){
+      this.animation.reverse();
+    })
+  };
 });
 
 //Collapse
