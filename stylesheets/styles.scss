@@ -390,7 +390,14 @@ p {
 }
 
 footer {
-  padding: 7rem 0;
+  text-align: center;
+  padding: 5rem 0 4rem 0;
 	z-index: 1;
 	background-color: $background-color;
+
+  span {
+    color: #0d0d0d;
+    word-spacing: 1px;
+    font-weight: 100;
+  }
 }
