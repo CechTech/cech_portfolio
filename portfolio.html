@@ -7,7 +7,7 @@
     	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     	<script src="https://use.fontawesome.com/a354bd7aef.js"></script>
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
@@ -51,8 +51,8 @@
 			<div class="background" id="bckg3"></div>
 
 			<div class="content">
-				<div class="title"><h1>Content</h1></div>
-				<div class="arrow">
+        <h1>Main Title</h1>
+				<div class="home-page-btn">
 					<svg class="line" width="100" height="100">
 						<polyline class="svg-line" points="0,25 50,75 100,25" style="fill:none;stroke:white;stroke-width:3" />
 					</svg>
@@ -62,9 +62,7 @@
 
 		<div class="page" id="page2">
 			<div class="portfolio">
-				<div class="white">
-					<div class="title"><h1>Portfolio</h1></div>
-				</div>
+        <h2>Portfolio</h2>
 
 				<div class="wrap" id="wrap1">
 					<div class="img" id="img1"></div>
@@ -95,7 +93,7 @@
 		<div class="page" id="page3">
 			<div class="content">
         <div class="bio">
-          <h1>Bio</h1>
+          <h2>Bio</h2>
           <p>
             Starting my professional career as a web developer. I am skilled in many programming languages and frameworks related to web development and my favourite ones are HTML, CSS, PHP, MySQL, jQuery, Bootstrap and GSAP. I study at the Faculty of Informatics and Statistics, University of Economics in Prague where I get good knowledge about business and marketing sector along with developer practical skills such as building Oracle database system, configurating Apache server and programming in Java. Most of our school projects are team based which is great for improving communication and learning how to cooperate with colleagues. I am going to learn more developer languages and technologies focused on web applications along with getting more in-depth with the ones I already know. On my to-do list are Ruby on Rails, React.js, Nette, Swift and Objective-C.
           </p>
@@ -105,12 +103,12 @@
 		<div class="page" id="page4">
 			<div class="background"></div>
 			<div class="content">
-				<div class="title"><h1>Content</h1></div>
+        <h2>Content</h2>
 			</div>
 		</div>
 		<div class="page" id="footer">
 			<div class="content">
-				<div class="title"><h1>Footer</h1></div>
+        <h2>Footer</h2>
 			</div>
 		</div>
 	</div>
@@ -295,7 +293,7 @@
 
 				});
 
-				$(".arrow").click(function(){
+				$(".home-page-btn").click(function(){
 
 					TweenLite.to(".parallax", 1.5, {scrollTo:{y:"#page2"}});
 
@@ -381,11 +379,7 @@
 					.addTo(controller);
 
 				});
-
 			});
-
 		</script>
-
 	</body>
-
 </html>
