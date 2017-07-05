@@ -72,6 +72,7 @@ p {
 				top: -8px;
 				left: -8px;
 				visibility: hidden;
+        display: none;
 				height: 56px;
 				width: 100%;
 				border: none;
@@ -133,6 +134,7 @@ p {
 					left: 0;
 					opacity: 1 !important;
 					visibility: visible !important;
+          display: inline !important;
 					width: auto;
 					padding-right: 1.8rem;
 					cursor: pointer;
@@ -190,8 +192,8 @@ p {
 		margin-right: auto;
 		left: 0;
 		right: 0;
-		top: 80%;
-		width: 350px;
+		top: 70%;
+		width: 200px;
 		height: 70px;
 		background-color: rgba(0,0,0,0.4);
 		border-radius: 5px;
@@ -208,6 +210,13 @@ p {
       stroke-width: 3;
 		}
 	}
+
+  @include breakpoint(768px) {
+    .home-page-btn {
+      width: 350px;
+      top: 80%;
+    }
+  }
 }
 
 #page2 {
