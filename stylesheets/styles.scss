@@ -54,6 +54,11 @@ p {
 	font-size: 1.2rem;
 	color: #0d0d0d;
 	word-spacing: 2px;
+  margin-bottom: 1.2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 a {
@@ -368,22 +373,24 @@ a {
   background-color: $background-color;
 	z-index: 1;
 
-  .bio {
-    width: 100%;
+  .about-me-content {
     padding: 3rem 1.8rem;
 
     h2 {
+      text-align: center;
       margin-bottom: 1.5rem;
     }
   }
 
   @include breakpoint($destop) {
-    .bio {
-      padding: 7rem 15%;
-    }
+    .about-me-content {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 7rem 5rem;
 
-    h2 {
-      margin-bottom: 3rem;
+      h2 {
+        margin-bottom: 3rem;
+      }
     }
   }
 }
