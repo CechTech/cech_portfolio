@@ -201,15 +201,15 @@ button {
   }
 
 	#bckg1 {
-		@include background("space_v2.jpg");
+		@include background("space_background.jpg");
 	}
 
 	#bckg2 {
-		@include background("spacex_v4.jpg");
+		@include background("spacex_background.jpg");
 	}
 
 	#bckg3 {
-		@include background("nasa_cosmonaut_v6.jpg");
+		@include background("cosmonaut_background.jpg");
     bottom: -300px;
     top: auto;
     min-height: 2251px;
@@ -413,7 +413,7 @@ button {
   text-align: center;
 
 	.background {
-		@include background("contact.jpg");
+		@include background("contact_background.jpg");
     @include parallax(-.3);
     -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
             box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
