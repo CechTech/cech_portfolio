@@ -1,3 +1,102 @@
+//Navbar fx
+$(document).ready(function() {
+  $(function() {
+    var controller = new ScrollMagic.Controller();
+
+    var page2 = new TimelineLite();
+    page2.to('.navbar', .2, {backgroundColor: 'rgba(255,255,255,0.6)', overwrite: false})
+    .to('.navbar a', .2, {color: '#7f7f7f', overwrite: false, immediateRender: false}, "-=.2")
+    .to('#nav button', .2, {color: '#7f7f7f', backgroundColor: 'rgba(0,0,0,0)', overwrite: false, immediateRender: false}, "-=.2")
+    .fromTo('#portfolio-btn', .2, {backgroundColor: 'none'}, {backgroundColor: '#cdcdcd', overwrite: false, immediateRender: false}, "-=.2")
+    ;
+
+    var containerScene = new ScrollMagic.Scene({
+      triggerElement: '#page2',
+      offset: -56,
+    }).setTween(page2)
+    .triggerHook("onLeave")
+    .addTo(controller)
+    ;
+
+    var page3 = new TimelineLite();
+    page3.to('#nav button', .2, {backgroundColor: 'none', overwrite: false, immediateRender: false})
+    .fromTo('#bio-btn', .2, {backgroundColor: 'none'}, {backgroundColor: '#cdcdcd', overwrite: false, immediateRender: false}, "-=.2")
+    ;
+
+    var thirdscene = new ScrollMagic.Scene({
+      triggerElement: '#page3',
+      offset: -56
+    }).setTween(page3)
+    .triggerHook("onLeave")
+    .addTo(controller)
+    ;
+
+    var page4 = new TimelineLite();
+    page4.to('.navbar', .2, {backgroundColor: 'rgba(0,0,0,0.3)', overwrite: false, immediateRender: false})
+    .to('.navbar a', .2, {color: 'white', overwrite: false, immediateRender: false}, "-=.2")
+    .to('#nav button', .2, {color: "white", backgroundColor: 'rgba(205,205,205,0)', overwrite: false, immediateRender: false}, "-=.2")
+    .fromTo('#contact-btn', .2, {backgroundColor: 'none'}, {backgroundColor: 'rgba(0,0,0,0.4)', overwrite: false, immediateRender: false}, "-=.2")
+    ;
+
+    var secondScene = new ScrollMagic.Scene({
+      triggerElement: '#page4',
+      offset: -56,
+    }).setTween(page4)
+    .triggerHook("onLeave")
+    .addTo(controller)
+    ;
+  });
+});
+
+//Scrollto
+$(document).ready(function() {
+  $("#home-btn").click(function(){
+    TweenLite.to(".parallax", 1, {scrollTo:{y:"#page1"}});
+  });
+
+  $(".home-page-btn").click(function(){
+    TweenLite.to(".parallax", 1.5, {scrollTo:{y:"#page2"}});
+  });
+
+  $("#portfolio-btn").click(function(){
+    TweenLite.to(".parallax", 1, {scrollTo:{y:"#page2"}});
+  });
+
+  $("#bio-btn").click(function(){
+    TweenLite.to(".parallax", 1, {scrollTo:{y:"#page3"}});
+  });
+
+  $("#contact-btn").click(function(){
+    TweenLite.to(".parallax", 1, {scrollTo:{y:"#page4"}});
+  });
+});
+
+//Collapse
+$(document).ready(function() {
+  var tl = new TimelineLite( {
+    paused: true,
+    reversed: true
+  });
+
+  tl.to("#middle", 0.4, {autoAlpha:0})
+    .to("#top", 0.4, {y: 6, rotation: "+45"}, "-=0.4")
+    .to("#bottom", 0.4, {y: -6, rotation: "-45"}, "-=0.4")
+    .to(".collapse-btn", 0.4, {borderRadius: 20, height: 40, width: 40, x: -4}, "-=0.4")
+    .to(".navbar", 0.48, {height: 280}, "-=0.4")
+    .staggerTo("#nav button", 0.48, {y: 8, x: 8, autoAlpha: 1, display: "block"}, 0.12, "-=0.48")
+  ;
+
+  $(".collapse-btn").click(function() {
+    tl.reversed() ? tl.play():tl.reverse();
+  });
+
+  if ($(window).width() <= 768) {
+    $("#nav button").click(function() {
+      tl.reversed() ? tl.play():tl.reverse();
+    });
+  }
+});
+
 //Slideshow
 $(document).ready(function() {
   var controllerSS = new ScrollMagic.Controller();
@@ -22,27 +121,6 @@ $(document).ready(function() {
     .triggerHook("onLeave")
     .addTo(controllerSS)
   ;
-});
-
-//Button
-$(document).ready(function() {
-  $(".modal-btn").each(function (index, element){
-    var tlBtn = new TimelineLite({paused:true});
-
-    tlBtn
-      .fromTo(element, 0.4, {backgroundColor: "rgba(0,0,0,0)", borderColor: "#FFFFFF"}, {backgroundColor: "#1586D1", borderColor: "#1586D1", overwrite: false})
-    ;
-
-    element.animation = tlBtn;
-  })
-
-  $(".modal-btn").mouseenter(function(){
-    this.animation.play();
-  })
-
-  $(".modal-btn").mouseleave(function(){
-    this.animation.reverse();
-  })
 });
 
 //Blur
@@ -77,6 +155,27 @@ $(document).ready(function() {
   };
 });
 
+//Button
+$(document).ready(function() {
+  $(".modal-btn").each(function (index, element){
+    var tlBtn = new TimelineLite({paused:true});
+
+    tlBtn
+      .fromTo(element, 0.4, {backgroundColor: "rgba(0,0,0,0)", borderColor: "#FFFFFF"}, {backgroundColor: "#1586D1", borderColor: "#1586D1", overwrite: false})
+    ;
+
+    element.animation = tlBtn;
+  })
+
+  $(".modal-btn").mouseenter(function(){
+    this.animation.play();
+  })
+
+  $(".modal-btn").mouseleave(function(){
+    this.animation.reverse();
+  })
+});
+
 //Modal
 $(document).ready(function() {
   $('.modal-btn').click(function() {
@@ -109,104 +208,7 @@ $(document).ready(function() {
   }
 });
 
-//Collapse
-$(document).ready(function() {
-  var tl = new TimelineLite( {
-    paused: true,
-    reversed: true
-  });
 
-  tl.to("#middle", 0.4, {autoAlpha:0})
-    .to("#top", 0.4, {y: 6, rotation: "+45"}, "-=0.4")
-    .to("#bottom", 0.4, {y: -6, rotation: "-45"}, "-=0.4")
-    .to(".collapse-btn", 0.4, {borderRadius: 20, height: 40, width: 40, x: -4}, "-=0.4")
-    .to(".navbar", 0.48, {height: 280}, "-=0.4")
-    .staggerTo("#nav button", 0.48, {y: 8, x: 8, autoAlpha: 1, display: "block"}, 0.12, "-=0.48")
-  ;
-
-  $(".collapse-btn").click(function() {
-    tl.reversed() ? tl.play():tl.reverse();
-  });
-
-  if ($(window).width() <= 768) {
-    $("#nav button").click(function() {
-      tl.reversed() ? tl.play():tl.reverse();
-    });
-  }
-});
-
-//Scrollto
-$(document).ready(function() {
-  $("#home-btn").click(function(){
-    TweenLite.to(".parallax", 1, {scrollTo:{y:"#page1"}});
-  });
-
-  $(".home-page-btn").click(function(){
-    TweenLite.to(".parallax", 1.5, {scrollTo:{y:"#page2"}});
-  });
-
-  $("#portfolio-btn").click(function(){
-    TweenLite.to(".parallax", 1, {scrollTo:{y:"#page2"}});
-  });
-
-  $("#bio-btn").click(function(){
-    TweenLite.to(".parallax", 1, {scrollTo:{y:"#page3"}});
-  });
-
-  $("#contact-btn").click(function(){
-    TweenLite.to(".parallax", 1, {scrollTo:{y:"#page4"}});
-  });
-});
-
-//navbarfx
-$(document).ready(function() {
-  $(function() {
-    var controller = new ScrollMagic.Controller();
-
-    var page2 = new TimelineLite();
-    page2.to('.navbar', .2, {backgroundColor: 'rgba(255,255,255,0.6)', overwrite: false})
-      .to('.navbar a', .2, {color: '#7f7f7f', overwrite: false, immediateRender: false}, "-=.2")
-      .to('#nav button', .2, {color: '#7f7f7f', backgroundColor: 'rgba(0,0,0,0)', overwrite: false, immediateRender: false}, "-=.2")
-      .fromTo('#portfolio-btn', .2, {backgroundColor: 'none'}, {backgroundColor: '#cdcdcd', overwrite: false, immediateRender: false}, "-=.2")
-    ;
-
-    var containerScene = new ScrollMagic.Scene({
-      triggerElement: '#page2',
-      offset: -56,
-    }).setTween(page2)
-      .triggerHook("onLeave")
-      .addTo(controller)
-    ;
-
-    var page3 = new TimelineLite();
-    page3.to('#nav button', .2, {backgroundColor: 'none', overwrite: false, immediateRender: false})
-      .fromTo('#bio-btn', .2, {backgroundColor: 'none'}, {backgroundColor: '#cdcdcd', overwrite: false, immediateRender: false}, "-=.2")
-    ;
-
-    var thirdscene = new ScrollMagic.Scene({
-      triggerElement: '#page3',
-      offset: -56
-    }).setTween(page3)
-      .triggerHook("onLeave")
-      .addTo(controller)
-    ;
-
-    var page4 = new TimelineLite();
-    page4.to('.navbar', .2, {backgroundColor: 'rgba(0,0,0,0.3)', overwrite: false, immediateRender: false})
-      .to('.navbar a', .2, {color: 'white', overwrite: false, immediateRender: false}, "-=.2")
-      .to('#nav button', .2, {color: "white", backgroundColor: 'rgba(205,205,205,0)', overwrite: false, immediateRender: false}, "-=.2")
-      .fromTo('#contact-btn', .2, {backgroundColor: 'none'}, {backgroundColor: 'rgba(0,0,0,0.4)', overwrite: false, immediateRender: false}, "-=.2")
-    ;
-
-    var secondScene = new ScrollMagic.Scene({
-      triggerElement: '#page4',
-      offset: -56,
-    }).setTween(page4)
-      .triggerHook("onLeave")
-      .addTo(controller)
-    ;
-  });
-});
 
 //  $(document).ready(function() {
 //
