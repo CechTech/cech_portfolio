@@ -48,7 +48,7 @@ $(document).ready(function() {
   });
 });
 
-//Scrollto
+//Scroll To
 $(document).ready(function() {
   $("#home-btn").click(function(){
     TweenLite.to(".parallax", 1, {scrollTo:{y:"#page1"}});
@@ -97,13 +97,24 @@ $(document).ready(function() {
   }
 });
 
+//Presentation
+$(document).ready(function() {
+  var tlPr = new TimelineMax();
+
+  tlPr.to("#homePageWelcome", 4, {autoAlpha: 1, display: "block"}, "+=1.5")
+  .to("#homePageWelcome", 2, {autoAlpha: 0, display: "none"})
+  .to(".home-page-text", 4, {autoAlpha: 1, display: "block"})
+  .to(".home-page-btn", 3, {opacity: 1, y: 30}, "-=3")
+  ;
+});
+
 //Slideshow
 $(document).ready(function() {
   var controllerSS = new ScrollMagic.Controller();
   var tlss = new TimelineMax({repeat: -1, repeatDelay: -4});
 
   tlss.to("#bckg1", 5, {force3D:true, autoAlpha: 1, overwrite: false})
-    .to("#bckg1", 13, {force3D:true, scale: 1.5, overwrite: false, immediateRender: false}, "-=5")
+    .to("#bckg1", 17, {force3D:true, scale: 1.6, overwrite: false, immediateRender: false}, "-=5")
     .to("#bckg1", 5, {force3D:true, autoAlpha: 0, overwrite: false, immediateRender: false}, "-=3")
     .to("#bckg2", 5, {force3D:true, autoAlpha: 1, overwrite: false, immediateRender: false}, "-=5")
     .from("#bckg2", 20, {force3D:true, scale: 2, overwrite: false, immediateRender: false}, "-=5")
