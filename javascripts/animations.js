@@ -26,22 +26,21 @@ $(document).ready(function() {
 
 //Button
 $(document).ready(function() {
-  $(".visitBtn").each(function (index, element){
+  $(".modal-btn").each(function (index, element){
     var tlBtn = new TimelineLite({paused:true});
 
     tlBtn
       .fromTo(element, 0.4, {backgroundColor: "rgba(0,0,0,0)", borderColor: "#FFFFFF"}, {backgroundColor: "#1586D1", borderColor: "#1586D1", overwrite: false})
-      .to(".buttonIcon", 0.3, {x: 35, autoAlpha:1, ease:Power4.easeInOut}, "-=0.3")
     ;
 
     element.animation = tlBtn;
   })
 
-  $(".visitBtn").mouseenter(function(){
+  $(".modal-btn").mouseenter(function(){
     this.animation.play();
   })
 
-  $(".visitBtn").mouseleave(function(){
+  $(".modal-btn").mouseleave(function(){
     this.animation.reverse();
   })
 });
@@ -49,11 +48,11 @@ $(document).ready(function() {
 //Blur
 $(document).ready(function() {
   if($(window).width() >= 768) {
-    $(".wrap").each(function (index, element){
+    $(".portfolio-item").each(function (index, element){
       var imagen = $(this).find("img");
       var blurElement = {a:0};
       var overlay = $(this).find(".overlay");
-      var btn = $(this).find(".visitBtn");
+      var btn = $(this).find(".modal-btn");
       var tlImg = new TimelineLite({paused:true});
 
       tlImg.to(blurElement, 0.3, {a:4, onUpdate:applyBlur, force3D:true})
@@ -68,14 +67,46 @@ $(document).ready(function() {
       };
     })
 
-    $(".wrap").mouseenter(function(){
+    $(".portfolio-item").mouseenter(function(){
       this.animation.play();
     })
 
-    $(".wrap").mouseleave(function(){
+    $(".portfolio-item").mouseleave(function(){
       this.animation.reverse();
     })
   };
+});
+
+//Modal
+$(document).ready(function() {
+  $('.modal-btn').click(function() {
+    var btnVal = ($(this).data('modal'));
+        modalId = "#modalCard" + btnVal;
+        isTweening = false;
+        tlModal = new TimelineLite( {
+          onReverseComplete: endAnimation
+        });
+
+    if(!isTweening) {
+      isTweening = true;
+
+      tlModal.to(".modal", 0.4, {autoAlpha: 1})
+      .to(modalId, 0.4, {autoAlpha: 1}, "-=0.4")
+      ;
+
+      tlModal.play();
+
+      $(".modal").click(function() {
+        tlModal.reverse();
+      })
+      .delegate('.modal-card', 'click', function(e){ e.stopImmediatePropagation(); })
+      ;
+    }
+  })
+
+  function endAnimation() {
+    isTweening = false;
+  }
 });
 
 //Collapse
@@ -104,7 +135,7 @@ $(document).ready(function() {
   }
 });
 
-//scrollto
+//Scrollto
 $(document).ready(function() {
   $("#home-btn").click(function(){
     TweenLite.to(".parallax", 1, {scrollTo:{y:"#page1"}});
