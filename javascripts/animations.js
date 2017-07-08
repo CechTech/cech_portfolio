@@ -143,9 +143,8 @@ $(document).ready(function() {
       var btn = $(this).find(".modal-btn");
       var tlImg = new TimelineLite({paused:true});
 
-      tlImg.to(blurElement, 0.35, {a:4, onUpdate:applyBlur, force3D:true})
-        .to(imagen, 0.35, {scale: 1.03, force3D:true}, "-=0.35")
-        .to(btn, 0.35, {y:-20, autoAlpha:1}, "-=0.35")
+      tlImg.to(blurElement, 0.35, {a:4, onUpdate:applyBlur, force3D: true})
+        .to(btn, 0.35, {y:-20, autoAlpha:1, rotation: 0.01}, "-=0.35")
       ;
 
       element.animation = tlImg;
