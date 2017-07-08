@@ -22,21 +22,8 @@ h1, h2 {
 	font-size: 3rem;
 	color: $primary;
 
-  @include breakpoint($destop) {
+  @include breakpoint($laptop) {
     font-size: 5rem;
-  }
-}
-
-h3 {
-  text-align: left;
-  font-size: 1.3rem;
-  margin-bottom: .7rem;
-  margin-left: .6rem;
-  margin: 4rem 0 .7rem .6rem;
-  font-weight: 500;
-
-  &:first-child {
-    margin-top: 0;
   }
 }
 
@@ -125,28 +112,28 @@ button {
 		}
 
 		.collapse-btn {
-			margin-right: 30px;
-			margin-top: 10px;
+      position: absolute;
 			height: 36px;
 			width: 	46px;
-			float: right;
-      padding: 0 5px;
+			right: 1.8rem;
+      top: 10px;
 			border-radius: 5px;
 			background-color: rgba(255,255,255,0);
 			border: 1px solid #c8c8c8;
 
-			.collapse-line {
-				border: 1px solid #a7a7a7;
-				margin: 4px 4px;
-			}
+      .collapse-btn-icon {
+        @include center(null);
+        width: 60%;
 
-			&:focus {
-				outline: 0;
-			}
+        .collapse-line {
+          border: 1px solid #a7a7a7;
+          margin: 4px 0;
+        }
+      }
 		}
 	}
 
-	@include breakpoint($destop) {
+	@include breakpoint($laptop) {
 		.navbar-content {
 			height: 100%;
 
@@ -214,7 +201,7 @@ button {
     top: auto;
     min-height: 2251px;
 
-    @include breakpoint($destop) {
+    @include breakpoint($laptop) {
       bottom: 0;
     }
 	}
@@ -231,7 +218,7 @@ button {
       font-weight: 200;
       white-space: nowrap;
 
-      @include breakpoint($destop) {
+      @include breakpoint($laptop) {
         font-size: 3.5rem;
       }
     }
@@ -244,7 +231,7 @@ button {
       font-weight: 200;
       white-space: nowrap;
 
-      @include breakpoint($destop) {
+      @include breakpoint($laptop) {
         font-size: 3.5rem;
       }
     }
@@ -258,7 +245,7 @@ button {
       white-space: nowrap;
       margin-top: 2rem;
 
-      @include breakpoint($destop) {
+      @include breakpoint($laptop) {
         font-size: 1.8rem;
       }
     }
@@ -286,7 +273,7 @@ button {
 		}
 	}
 
-  @include breakpoint($destop) {
+  @include breakpoint($laptop) {
     .home-page-btn {
       width: 350px;
       height: 60px;
@@ -313,28 +300,9 @@ button {
       padding: 3rem 10%;
     }
 
-    @include breakpoint($destop) {
+    @include breakpoint($laptop) {
       h2 {
         padding: 7rem 10%;
-      }
-    }
-
-    .portfolio-mobile-links {
-      a {
-        display: block;
-        width: 100%;
-        height: 200px;
-        text-align: left;
-      }
-    }
-
-    .portfolio-mobile-img {
-      @include background("work2.jpg");
-    }
-
-    @include breakpoint($destop) {
-      .portfolio-mobile-links {
-        display: none;
       }
     }
 
@@ -346,45 +314,88 @@ button {
               transform: scale(1.05);
     }
 
-    .overlay {
-      visibility: hidden;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
     .modal-btn {
 			visibility: hidden;
 			position: absolute;
 			margin: 0 auto;
 			left: 0;
 			right: 0;
-			top: 75%;
-			height: 3.5rem;
-			width: 12rem;
+			top: 72%;
+			height: 3.1rem;
+			width: 9.5rem;
 			background-color: rgba(0, 0, 0, 0);
 			border: 2px solid $white;
 			border-radius: 3px;
 			color: $white;
-			font-size: 1.3rem;
+			font-size: 1.1rem;
+
+      @include breakpoint($desktop) {
+        height: 3.5rem;
+  			width: 12rem;
+        font-size: 1.3rem;
+      }
 		}
 
 		.portfolio-item {
-			display: none;
 			@include span(12 of 12);
+      margin-bottom: 3rem;
 
-			@include breakpoint($destop) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+			@include breakpoint($laptop) {
+        @include span(6 of 12);
         display: block;
         position: relative;
         overflow: hidden;
-			  @include span(6 of 12);
-
-        &:nth-child(2) {
-          @include last;
-        }
+        margin-bottom: 0;
 			}
+
+      h3 {
+        text-align: left;
+        font-size: 1.1rem;
+        margin: 0 0 1rem 1rem;
+        font-weight: 400;
+        color: $black;
+
+        @include breakpoint($laptop) {
+          visibility: hidden;
+          @include center(null);
+          z-index: 1;
+          top: 40%;
+          margin: 0;
+          color: $white;
+          font-size: 1.3rem;
+          white-space: nowrap;
+          padding: 1.1rem 1.6rem;
+          background-color: rgba(0, 0, 0, 0.4);
+          border-radius: 5px;
+        }
+
+        @include breakpoint($desktop) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .portfolio-mobile-link {
+        display: block;
+        margin: 0 auto;
+        margin-top: .4rem;
+        height: 2.4rem;
+        width: 100%;
+        background-color: #181e26;
+        color: $white;
+        font-size: 1.1rem;
+
+        @include breakpoint($laptop) {
+          display: none;
+        }
+
+        span {
+          @include center(null);
+        }
+      }
 		}
 	}
 }
@@ -402,7 +413,7 @@ button {
     }
   }
 
-  @include breakpoint($destop) {
+  @include breakpoint($laptop) {
     .about-me-content {
       max-width: 1140px;
       margin: 0 auto;
@@ -435,7 +446,7 @@ button {
     -webkit-box-shadow: inset 0 0 4rem rgba(0,0,0,.5);
             box-shadow: inset 0 0 4rem rgba(0,0,0,.5);
 
-    @include breakpoint($destop) {
+    @include breakpoint($laptop) {
       height: 55%;
       width: 25%;
       min-width: 500px;
@@ -446,7 +457,7 @@ button {
       @include center(null);
       width: 100%;
 
-      @include breakpoint($destop) {
+      @include breakpoint($laptop) {
         top: 40%;
       }
 
@@ -455,7 +466,7 @@ button {
         height: 100px;
         border-radius: 50px;
 
-        @include breakpoint($destop) {
+        @include breakpoint($laptop) {
           width: 110px;
           height: 110px;
           border-radius: 55px;

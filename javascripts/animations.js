@@ -81,7 +81,7 @@ $(document).ready(function() {
   tl.to("#middle", 0.4, {autoAlpha:0})
     .to("#top", 0.4, {y: 6, rotation: "+45"}, "-=0.4")
     .to("#bottom", 0.4, {y: -6, rotation: "-45"}, "-=0.4")
-    .to(".collapse-btn", 0.4, {borderRadius: 20, height: 40, width: 40, x: -4}, "-=0.4")
+    .to(".collapse-btn", 0.4, {borderRadius: 20, height: 40, width: 40, x: -3}, "-=0.4")
     .to(".navbar", 0.48, {height: 280}, "-=0.4")
     .staggerTo("#nav button", 0.48, {y: 8, x: 8, autoAlpha: 1, display: "block"}, 0.12, "-=0.48")
   ;
@@ -141,10 +141,12 @@ $(document).ready(function() {
       var imagen = $(this).find("img");
       var blurElement = {a:0};
       var btn = $(this).find(".modal-btn");
+      var heading = $(this).find("h3");
       var tlImg = new TimelineLite({paused:true});
 
       tlImg.to(blurElement, 0.35, {a:4, onUpdate:applyBlur, force3D: true})
         .to(btn, 0.35, {y:-20, autoAlpha:1, rotation: 0.01}, "-=0.35")
+        .to(heading, 0.35, {autoAlpha:1}, "-=0.35")
       ;
 
       element.animation = tlImg;
@@ -216,42 +218,3 @@ $(document).ready(function() {
     isTweening = false;
   }
 });
-
-
-
-//  $(document).ready(function() {
-//
-//   $(".work").each(function (index, element){
-//
-//     var overlay = $(this).find(".overlay");
-//     var blurElement = {a:0};
-//     var tl = new TimelineLite({paused:true});
-//
-//     tl.to(blurElement, .3, {a:4, onUpdate:applyBlur, force3D:true})
-//     .to(element, .3, { scale: 1.01, transformOrigin: "50% 50%"}, "-=0.3")
-//     .to(overlay, .3, { scale: 1.01, autoAlpha:1, ease:Power4.easeInOut}, "-=0.3")
-//     ;
-//
-//     element.animation = tl;
-//
-//     function applyBlur() {
-//
-//   TweenLite.set(element, {webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)", force3D:true});
-//
-//     };
-//
-//   })
-//
-//   $(".work").mouseenter(function(){
-//
-//     this.animation.play();
-//
-//   })
-//
-//   $(".work").mouseleave(function(){
-//
-//     this.animation.reverse();
-//
-//   })
-//
-// });
