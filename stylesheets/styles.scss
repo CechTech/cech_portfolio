@@ -534,15 +534,100 @@ footer {
     -webkit-box-shadow: inset 0 0 4rem rgba(0,0,0,.2);
     box-shadow: inset 0 0 4rem rgba(0,0,0,.2);
 
-    height: 55%;
-    width: 25%;
+    height: 60%;
+    width: 85%;
     min-width: 500px;
-    min-height: 280px;
+    min-height: 480px;
+
+    @include breakpoint($desktop) {
+      width: 50%;
+      min-width: 900px;
+      min-height: 520px;
+    }
 
     .modal-card-content {
       @include center(null);
       text-align: center;
       width: 100%;
+      padding: 0 5%;
+
+      .modal-features {
+        @include span(6 of 12);
+        padding-right: 10px;
+      }
+
+      .modal-technologies {
+        @include span(6 of 12);
+
+        ul {
+          @include span(3 of 6);
+        }
+      }
+
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 5%;
+      }
+
+      h3 {
+        text-align: left;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        font-weight: 400;
+      }
+
+      ul {
+        font-size: 1.2rem;
+        font-weight: 200;
+        text-align: left;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 1rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .modal-visit-btn {
+        position: relative;
+        clear: both;
+        float: left;
+        display: block;
+        height: 3.1rem;
+        width: 9.5rem;
+        background-color: $primary;
+        border-radius: 3px;
+        color: $white;
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+        margin-right: 1rem;
+
+        span {
+          @include center(null);
+        }
+      }
+
+      .modal-git-btn {
+        position: relative;
+        float: left;
+        display: block;
+        height: 3.1rem;
+        width: 11rem;
+        background-color: #FF9900;
+        border-radius: 3px;
+        color: $white;
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+
+        span {
+          @include center(null);
+          white-space: nowrap;
+        }
+      }
     }
   }
 }
