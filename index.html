@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-    	<meta charset="utf-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    	<meta charset="utf-8" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="My development portfolio website. You can find here my work, something about me and contact." />
+  		<meta name="author" content="Jiří Čech" />
+  		<meta name="keywords" content="Jiří Čech czech portfolio web development back end front back-end front-end full stack full-stack prague gsap css html sass ruby on rails jquery javascript sccs susy sass blur responsive mobile first php" />
 
     	<script src="https://use.fontawesome.com/81ebd77a72.js"></script>
     	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/ScrollToPlugin.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+			<link href="https://fonts.googleapis.com/css?family=PT+Sans:400&subset=latin-ext" rel="stylesheet" />
+			<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=latin-ext" rel="stylesheet" />
 
-			<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&subset=latin-ext" rel="stylesheet">
-			<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin-ext" rel="stylesheet">
-			<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=latin-ext" rel="stylesheet">
-
-    	<link rel="stylesheet" href="stylesheets/styles.min.css">
+    	<link rel="stylesheet" href="stylesheets/styles.min.css" />
+      <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
     	<title>Web Development | Jiří Čech</title>
 	</head>
@@ -35,7 +35,7 @@
           </div>
   			</div>
 
-  			<a href="#" class="brand">Jiří Čech</a>
+  			<a href="http://www.jiricech.com/" class="brand">Jiří Čech</a>
 
   	    <div id="nav">
   	      <button id="home-btn">Home</button><button id="portfolio-btn">Portfolio</button><button id="bio-btn">About Me</button><button id="contact-btn">Contact</button>
@@ -69,7 +69,7 @@
             <h3>Ruby on Rails Application</h3>
             <img src="images/cech_ror_portfolio.jpg" alt="Work" class="potfolio-img" />
   					<button class="modal-btn" data-modal="1">More Info</button>
-            <a href="http://www.google.com" target="_blank" class="portfolio-mobile-link">
+            <a href="https://www.cech-ror-portfolio.herokuapp.com/" target="_blank" class="portfolio-mobile-link">
               <span>Visit</span>
             </a>
   				</div>
@@ -78,16 +78,13 @@
             <h3>SASS and GSAP One Page Portfolio</h3>
   					<img src="images/cech_portfolio.jpg" alt="Work" class="potfolio-img" />
   					<button class="modal-btn" data-modal="2">More Info</button>
-            <a href="http://www.google.com" target="_blank" class="portfolio-mobile-link">
-              <span>Visit</span>
-            </a>
   				</div>
 
   				<div class="portfolio-item">
             <h3>jQuery Search Application</h3>
   					<img src="images/postcode_finder_portfolio.jpg" alt="Work" class="potfolio-img" />
   					<button class="modal-btn" data-modal="3">More Info</button>
-            <a href="http://www.google.com" target="_blank" class="portfolio-mobile-link">
+            <a href="./postcode_finder" target="_blank" class="portfolio-mobile-link">
               <span>Visit</span>
             </a>
   				</div>
@@ -96,7 +93,7 @@
             <h3>PHP Content Management System</h3>
   					<img src="images/cech_php_cms_portfolio.jpg" alt="Work" class="potfolio-img" />
   					<button class="modal-btn" data-modal="4">More Info</button>
-            <a href="http://www.google.com" target="_blank" class="portfolio-mobile-link">
+            <a href="./php_cms" target="_blank" class="portfolio-mobile-link">
               <span>Visit</span>
             </a>
   				</div>
@@ -176,10 +173,10 @@
               <li>Postgres</li>
             </ul>
           </div>
-          <a href="#" class="modal-visit-btn">
+          <a href="http://cech-ror-portfolio.herokuapp.com/" target="_blank" class="modal-visit-btn">
             <span>Visit</span>
           </a>
-          <a href="#" class="modal-git-btn">
+          <a href="https://github.com/CechTech/cech_ror_portfolio" target="_blank" class="modal-git-btn">
             <span>GIT Repository</span>
           </a>
         </div>
@@ -211,7 +208,7 @@
               <li>Scroll Magic</li>
             </ul>
           </div>
-          <a href="#" class="modal-git-btn modal-git-clear">
+          <a href="https://github.com/CechTech/cech_portfolio" target="_blank" class="modal-git-btn modal-git-clear">
             <span>GIT Repository</span>
           </a>
         </div>
@@ -241,10 +238,10 @@
               <li>Bootstrap</li>
             </ul>
           </div>
-          <a href="#" class="modal-visit-btn">
+          <a href="./postcode_finder" target="_blank" class="modal-visit-btn">
             <span>Visit</span>
           </a>
-          <a href="#" class="modal-git-btn">
+          <a href="https://github.com/CechTech/cech_postcode_finder" target="_blank" class="modal-git-btn">
             <span>GIT Repository</span>
           </a>
         </div>
@@ -273,10 +270,10 @@
               <li>MySQL</li>
             </ul>
           </div>
-          <a href="#" class="modal-visit-btn">
+          <a href="./php_cms" target="_blank" class="modal-visit-btn">
             <span>Visit</span>
           </a>
-          <a href="#" class="modal-git-btn">
+          <a href="https://github.com/CechTech/cech_php_cms" target="_blank" class="modal-git-btn">
             <span>GIT Repository</span>
           </a>
         </div>
