@@ -85,7 +85,7 @@ button {
 			text-decoration: none;
 		}
 
-		#nav {
+		.nav {
 			button {
 				position: relative;
 				top: -8px;
@@ -141,7 +141,7 @@ button {
 				cursor: pointer;
 			}
 
-			#nav {
+			.nav {
 				float: right;
 				height: 100%;
 				visibility: visible !important;
